@@ -20,7 +20,19 @@ Issues = "https://github.com/lonnen/asciimonster/issues"
 CI = "https://github.com/lonnen/asciimonster/actions"
 
 [project.scripts]
-asciimonster = "asciimonster.cli:cli"
+asciimonster = "asciimonster.__main__:asciimonster"
 
 [project.optional-dependencies]
 test = ["pytest"]
+
+[tool.setuptools.packages.find]
+exclude=["data"]
+
+[tool.ruff]
+# Enable pycodestyle (E), pyflakes (F), and bugbear (B) rules
+lint.select = ["E", "F", "B"]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
