@@ -15,11 +15,11 @@ def asciimonster(input):
         characters.update([c])
 
     total = float(characters.total())
-    stats = sorted(
-        [(ord(char), char, count, count / total) for char, count in characters.items()]
-    )
-    for line in [s for s in stats if s[0] < 256 and s[0] > 30]:
-        click.echo(", ".join([str(item) for item in line]))
+    for i in range(32, 127):
+        count = characters.get(chr(i), 0)
+        frequency = "{0:.{1}f}".format((count / total * 100), 2)
+        line = ", ".join([str(i), chr(i), str(count), frequency])
+        click.echo(line)
 
 
 if __name__ == "__main__":
