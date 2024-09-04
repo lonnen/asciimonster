@@ -18,7 +18,7 @@ def asciimonster(input):
     stats = sorted(
         [(ord(char), char, count, count / total) for char, count in characters.items()]
     )
-    for line in [s for s in stats if s[0] < 256]:
+    for line in [s for s in stats if s[0] < 256 and s[0] > 30]:
         click.echo(", ".join([str(item) for item in line]))
 
 
