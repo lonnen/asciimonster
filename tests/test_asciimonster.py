@@ -1,10 +1,11 @@
 from click.testing import CliRunner
-from asciimonster.cli import cli
+from asciimonster.__main__ import asciimonster
 
-
-def test_version():
+def test_asciimonster():
     runner = CliRunner()
-    with runner.isolated_filesystem():
-        result = runner.invoke(cli, ["--version"])
-        assert result.exit_code == 0
-        assert result.output.startswith("cli, version ")
+    result = runner.invoke(asciimonster, ["data/pg996.txt"])
+    assert result.exit_code == 0
+    lines = result.output.strip().split("\n")
+    assert len(lines) == 95
+    assert lines[0].startswith("32")
+    assert lines[-1].startswith("126")
