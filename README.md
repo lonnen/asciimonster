@@ -4,7 +4,7 @@ a cli tool for ingesting a file and vomiting out ascii character stats.
 
 This is not intended to be a robust or general tool. It can probably be replaced with a bash one-liner. This is a quick 'n dirty tool for deriving a dataset to help with solving the [cryptopals](https://www.cryptopals.com/) challenge sets.
 
-The Project Gutenberg text of Don Quixote is included in the `data/` folder and licensed under the Project Gutenberg License.
+If you are here looking for the output of such a tool, or other english n-grams then please see [this section of Practical Cryptography](http://practicalcryptography.com/cryptanalysis/text-characterisation/quadgrams/).
 
 ## Installation
 
@@ -143,3 +143,7 @@ To run the tests:
 ```bash
 python -m pytest
 ```
+
+## License
+
+Apache license as described in the LICENSE file, except the Project Gutenberg text of Don Quixote is included in the `data/` folder which is licensed under the Project Gutenberg License.
